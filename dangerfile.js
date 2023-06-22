@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * COPYRIGHT (c) Meta Platforms, Inc. and affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -40,8 +40,8 @@ const HEAD_DIR = 'build';
 const CRITICAL_THRESHOLD = 0.02;
 const SIGNIFICANCE_THRESHOLD = 0.002;
 const CRITICAL_ARTIFACT_PATHS = new Set([
-  // We always report changes to these bundles, even if the change is
-  // insignificant or non-existent.
+  /* We always report changes to these bundles, even if the change is
+   insignificant or non-existent.*/
   'oss-stable/react-dom/cjs/react-dom.production.min.js',
   'oss-experimental/react-dom/cjs/react-dom.production.min.js',
   'facebook-www/ReactDOM-prod.classic.js',
@@ -98,8 +98,8 @@ function row(result, baseSha, headSha) {
 }
 
 (async function () {
-  // Use git locally to grab the commit which represents the place
-  // where the branches differ
+  /* Use git locally to grab the commit which represents the place
+  where the branches differ */
 
   const upstreamRepo = danger.github.pr.base.repo.full_name;
   if (upstreamRepo !== 'facebook/react') {
@@ -223,9 +223,9 @@ function row(result, baseSha, headSha) {
       criticalResults.push(row(result, baseSha, headSha));
     }
 
-    // Do the same for results that exceed the significant threshold. These
-    // will go into the bottom, collapsed section. Intentionally including
-    // critical artifacts in this section, too.
+    /* Do the same for results that exceed the significant threshold. These
+     will go into the bottom, collapsed section. Intentionally including
+    critical artifacts in this section, too. */
     if (
       result.change > SIGNIFICANCE_THRESHOLD ||
       0 - result.change > SIGNIFICANCE_THRESHOLD ||
